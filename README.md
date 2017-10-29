@@ -5,7 +5,7 @@ In this repo I use decision trees to solve several well-known machine learning p
 
 ## Titanic
 
-## Model 1
+### Model 1
 ![Titanic model 1](titanic-model-1.png)
 
 **Rules**:
@@ -30,7 +30,7 @@ Rule 4: (251/17, lift 2.9)
 	->  class Sobrevive  [0.929]
 
 
-## Model 2
+### Model 2
 ![Titanic model 2](titanic-model-2.png)
 
 **Rules:**
@@ -48,7 +48,7 @@ Rule 3: (188/17, lift 2.8)
 	SEX = Mujer
 	->  class Sobrevive  [0.905]
 
-## Model 3
+### Model 3
 ![Titanic model 3](titanic-model-3.png)
 
 
