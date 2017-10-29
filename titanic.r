@@ -204,7 +204,7 @@ testy <- as.factor(testData[,4])
 # Build the model
 model <- C50::C5.0( trainX, trainy )
 summary(model)
-C5.0.graphviz(model, './model-1.txt', col.question ='cyan')
+C5.0.graphviz(model, './titanic-model-1.txt', col.question ='cyan')
 
 # Error rate
 p <- predict( model, testX, type="class" )
@@ -231,7 +231,7 @@ testy <- as.factor(y[1468:2201,])
 # Build the model
 model <- C50::C5.0( trainX, trainy )
 summary(model)
-C5.0.graphviz(model, './model-2.txt', col.question ='cyan')
+C5.0.graphviz(model, './titanic-model-2.txt', col.question ='cyan')
 
 # Error rate
 p <- predict( model, testX, type="class" )
@@ -253,7 +253,7 @@ testy <- as.factor(y[1468:2201,])
 # Build the model
 model <- C50::C5.0( trainX, trainy )
 summary(model)
-C5.0.graphviz(model, './model-3.txt', col.question ='cyan')
+C5.0.graphviz(model, './titanic-model-3.txt', col.question ='cyan')
 
 # Error rate
 p <- predict( model, testX, type="class" )
