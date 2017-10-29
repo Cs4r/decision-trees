@@ -69,3 +69,58 @@ Rule 3: (178/13, lift 2.9)
  
  
 **Note**: *Model 2 and 3 are effectively the same.* 
+
+
+
+## Iris
+
+### Model 1
+![Iris model 3](iris-model-1.png)
+
+*Rules:*
+
+Rule 1: (33, lift 2.9)
+	PetalLengthCm <= 1.9
+	->  class Iris-setosa  [0.971]
+
+Rule 2: (66/33, lift 1.5)
+	PetalLengthCm > 1.9
+	->  class Iris-versicolor  [0.500]
+
+Rule 3: (26, lift 2.9)
+	PetalLengthCm > 5
+	->  class Iris-virginica  [0.964]
+
+Rule 4: (16, lift 2.8)
+	SepalWidthCm <= 2.9
+	PetalWidthCm > 1.5
+	->  class Iris-virginica  [0.944]
+
+### Model 7
+![Iris model 7](iris-model-7.png)
+
+
+*Rules:*
+
+Rules:
+
+Rule 1: (33, lift 2.9)
+	PetalLengthCm <= 1.9
+	->  class Iris-setosa  [0.971]
+
+Rule 2: (32/1, lift 2.8)
+	PetalLengthCm > 1.9
+	PetalLengthCm <= 4.9
+	PetalWidthCm <= 1.7
+	->  class Iris-versicolor  [0.941]
+
+Rule 3: (28, lift 2.9)
+	PetalWidthCm > 1.7
+	->  class Iris-virginica  [0.967]
+
+Rule 4: (31/2, lift 2.7)
+	PetalLengthCm > 4.9
+	->  class Iris-virginica  [0.909]
+ 
+
+ 
