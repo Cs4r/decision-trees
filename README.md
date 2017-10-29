@@ -102,8 +102,6 @@ Rule 4: (16, lift 2.8)
 
 *Rules:*
 
-Rules:
-
 Rule 1: (33, lift 2.9)
 	PetalLengthCm <= 1.9
 	->  class Iris-setosa  [0.971]
