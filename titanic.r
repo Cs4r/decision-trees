@@ -1,11 +1,3 @@
-# decision-trees
-
-In this repo I use decision trees to solve several well-known machine learning problems.
-
-
-## Titanic
-
-```
 library(readr)
 titanic <- read_csv("./titanic.csv")
 View(titanic)
@@ -58,7 +50,7 @@ C5.0.graphviz <- function( C5.0.model,   filename, fontname ='Arial',
                            col.question = 'grey78', shape.conclusion ='box3d',shape.question ='diamond',
                            bool.substitute = 'None', prefix=FALSE, vertical=TRUE ) {
 
-    library(cwhmisc)  
+    library(cwhmisc)
     library(stringr)
     treeout <- C5.0.model$output
     treeout<- substr(treeout,   cpos(treeout, 'Decision tree:', start=1)+14,nchar(treeout))
@@ -77,7 +69,7 @@ C5.0.graphviz <- function( C5.0.model,   filename, fontname ='Arial',
     firstindent <- 4
     substitutes <- data.frame(None=c('= 0','= 1'), yesno=c('no','yes'),
                               truefalse=c('false', 'true'),TF=c('F','T'))
-    dtreestring<-unlist( scan(text= treeout,   sep='\n', what =list('character')))  
+    dtreestring<-unlist( scan(text= treeout,   sep='\n', what =list('character')))
 
     for (linecount in c(1:length(dtreestring))) {
         lineindent<-0
@@ -94,7 +86,7 @@ C5.0.graphviz <- function( C5.0.model,   filename, fontname ='Arial',
             shortstring <- str_trim(dtreestring[linecount], side='left')
             leadingspaces <- nchar(dtreestring[linecount]) - nchar(shortstring)
             lineindent <- lineindent + leadingspaces/4
-            dtreestring[linecount]<-str_trim(dtreestring[linecount], side='left')   
+            dtreestring[linecount]<-str_trim(dtreestring[linecount], side='left')
         }
         if (!is.na(cpos(dtreestring[linecount], ':...', start=1)))
             lineindent<- lineindent +  1
@@ -114,7 +106,7 @@ C5.0.graphviz <- function( C5.0.model,   filename, fontname ='Arial',
             theStack[theStackIndex,'INDENT'] <-firstindent
             theStackIndex<-theStackIndex+1
             currentvar <- currentvar + 1
-            if(currentvar>2) {  
+            if(currentvar>2) {
                 connectors[currentcon - 1,'END'] <- variables[currentvar - 1, 'SYMBOL']
             }
         }
@@ -127,9 +119,9 @@ C5.0.graphviz <- function( C5.0.model,   filename, fontname ='Arial',
             if (lineindent<previousindent) {
                 theStackIndex <- theStackIndex-(( previousindent- lineindent)  +1 )
                 currentsymbol <-theStack[theStackIndex,'ITEM']
-            } else  
+            } else
                 currentsymbol <-variables[currentvar - 1,'SYMBOL']
-        } else {  
+        } else {
             currentsymbol <-theStack[theStackIndex-((previousindent -lineindent ) +1    ),'ITEM']
             theStackIndex <- theStackIndex-(( previousindent- lineindent)    )
         }
@@ -266,4 +258,3 @@ C5.0.graphviz(model, './model-3.txt', col.question ='cyan')
 # Error rate
 p <- predict( model, testX, type="class" )
 100*(1 - sum( p == testy ) / length( p ))
-```
